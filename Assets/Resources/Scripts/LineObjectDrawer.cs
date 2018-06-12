@@ -16,7 +16,7 @@ public class LineObjectDrawer : MonoBehaviour
 
     LineHandler AddLine(Pair pair)
     {
-        GameObject NewLineObj = Instantiate(LinePrefab, transform.position, Quaternion.identity, transform);
+        GameObject NewLineObj = Instantiate(LinePrefab, transform.position, transform.rotation, transform);
         LineHandler NewLine = NewLineObj.GetComponent<LineHandler>();
         NewLine.Pair = pair;
         NewLine.UpdatePoints();

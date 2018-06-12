@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4278389745514054}
   - component: {fileID: 114792411323364184}
   - component: {fileID: 60006406700026702}
+  - component: {fileID: 114606330165921544}
   m_Layer: 0
   m_Name: RedBullet
   m_TagString: Untagged
@@ -69,6 +70,18 @@ PolygonCollider2D:
       - {x: 0.1, y: 0.5}
       - {x: -0.1, y: 0.5}
       - {x: -0.1, y: 0}
+--- !u!114 &114606330165921544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404976132225910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11248bc8602c4544f9f66d39317242fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 10
 --- !u!114 &114792411323364184
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -33,5 +33,21 @@ public class Matrix2x2
         Vector2 NewV = new Vector2(m.a11 * v.x + m.a12 * v.y, m.a21 * v.x + m.a22 * v.y);
         return NewV;
     }
+    public Matrix2x2 Identity()
+    {
+        return new Matrix2x2(1, 0, 0, 1);
+    }
+    public Matrix2x2 Stretch(float alpha)
+    {
+        return new Matrix2x2(alpha, 0, 0, alpha);
+    }
+    public Matrix2x2 Rotation(float angle)
+    {
+        return new Matrix2x2(Mathf.Cos(angle), Mathf.Sin(angle), -Mathf.Sin(angle), Mathf.Cos(angle));
+    }
+    public Matrix2x2 Reflection(Vector2 mirrow)
+    {
+        return new Matrix2x2((1 - 2 * Mathf.Pow(mirrow.y, 2)), (-2 * mirrow.x * mirrow.y), (-2 * mirrow.x * mirrow.y), (1 - 2 * Mathf.Pow(mirrow.x, 2)));
+    }
 
 }
