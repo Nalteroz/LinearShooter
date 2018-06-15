@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 114792411323364184}
   - component: {fileID: 60006406700026702}
   - component: {fileID: 114606330165921544}
+  - component: {fileID: 114169082393074630}
   m_Layer: 0
   m_Name: PlayerBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,6 +71,17 @@ PolygonCollider2D:
       - {x: 0.1, y: 0.5}
       - {x: -0.1, y: 0.5}
       - {x: -0.1, y: 0}
+--- !u!114 &114169082393074630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404976132225910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5605d57ecc23bac4d837fb591c0cc25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114606330165921544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,7 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11248bc8602c4544f9f66d39317242fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 20
+  Speed: 15
+  DyeTime: 5
 --- !u!114 &114792411323364184
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,17 +6,15 @@ public class PlayerControl : MonoBehaviour
 {
     public Camera MainCamera;
     public GameObject BulletPrefab;
-    public float MovmentSpeed = 10, BulletCoolDonw = 0.1f;
+    public float MovmentSpeed = 5, BulletCoolDonw = 0.1f, RotationAngle = 1;
 
     float LastTimeShootBullet = 0;
-    float ScreenVerticalLimit = Screen.height / 2, ScreenHorisontalLimit = Screen.width/2;
 	// Use this for initialization
 	void Start ()
     {
         if (!BulletPrefab) BulletPrefab = Resources.Load<GameObject>("Prefabs/" + "PlayerBullet");
         if (!MainCamera) MainCamera = FindObjectOfType<Camera>();
 	}
-	
 	// Update is called once per frame
 	void Update ()
     {
@@ -34,29 +32,26 @@ public class PlayerControl : MonoBehaviour
 
     public enum Side
     { Left, Right, Up, Down}
+    public enum Rotate
+    { Left, Right }
 
     public void CheckInput()
     {
-        Vector3 InCameraPosition = MainCamera.WorldToScreenPoint(transform.position);
         if (Input.GetAxis("Horizontal") > 0)
         {
-            if (InCameraPosition.x < Screen.width)
-                Move(Side.Right);
+            Move(Side.Right);
         }
         if (Input.GetAxis("Horizontal") < 0)
         {
-            if (InCameraPosition.x > 0)
-                Move(Side.Left);
+            Move(Side.Left);
         }
         if (Input.GetAxis("Vertical") < 0)
         {
-            if (InCameraPosition.y > 0)
-                Move(Side.Down);
+            Move(Side.Down);
         }
         if (Input.GetAxis("Vertical") > 0)
         {
-            if (InCameraPosition.y < Screen.height)
-                Move(Side.Up);
+            Move(Side.Up);
         }
         if (Input.GetAxis("Fire1") > 0)
         {
@@ -67,22 +62,23 @@ public class PlayerControl : MonoBehaviour
     public void Move(Side direction)
     {
         Vector2 dVector = Vector2.zero;
-        switch(direction)
+        if(direction == Side.Up || direction == Side.Down)
         {
-            case Side.Left:
-                dVector = Vector2.left;
-                break;
-            case Side.Right:
-                dVector = Vector2.right;
-                break;
-            case Side.Up:
-                dVector = Vector2.up;
-                break;
-            case Side.Down:
-                dVector = Vector2.down;
-                break;
+            if (direction == Side.Up) dVector = transform.up;
+            else dVector = -transform.up;
+            transform.position += (Vector3)(dVector * MovmentSpeed * Time.deltaTime);
         }
-        transform.position += (Vector3)(dVector * MovmentSpeed * Time.deltaTime);
+        if (direction == Side.Left || direction == Side.Right) RotateShip(direction);
+    }
+
+    void RotateShip(Side direction)
+    {
+        Matrix2x2 Rot = new Matrix2x2();
+        float angle = RotationAngle * Time.deltaTime;
+        if (direction == Side.Right) angle *= -1;
+        Rot = Rot.Rotation(angle);
+        transform.up = Rot * transform.up;
+        transform.right = Rot * transform.right;
     }
 
 }

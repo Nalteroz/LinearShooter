@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float Speed = 1;
+    public float Speed = 1, DyeTime = 3;
 
     Matrix2x2 MovmentTransformation;
 	// Use this for initialization
 	void Start ()
     {
-        Destroy(gameObject, 10);
+        Destroy(gameObject, DyeTime);
 	}
 	
 	// Update is called once per frame

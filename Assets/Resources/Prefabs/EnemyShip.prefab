@@ -9,67 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1404976132225910}
+  m_RootGameObject: {fileID: 1308680606986874}
   m_IsPrefabParent: 1
---- !u!1 &1404976132225910
+--- !u!1 &1308680606986874
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4278389745514054}
-  - component: {fileID: 114792411323364184}
-  - component: {fileID: 60006406700026702}
-  - component: {fileID: 114606330165921544}
-  - component: {fileID: 114409444350412520}
-  - component: {fileID: 50372488791250070}
+  - component: {fileID: 4792932104607992}
+  - component: {fileID: 114956883354134676}
+  - component: {fileID: 60878139111313794}
+  - component: {fileID: 114115537965476634}
+  - component: {fileID: 114745745531786926}
   m_Layer: 0
-  m_Name: RedBullet
-  m_TagString: EnemyBullet
+  m_Name: EnemyShip
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4278389745514054
+--- !u!4 &4792932104607992
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404976132225910}
+  m_GameObject: {fileID: 1308680606986874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 14.63, z: 0}
+  m_LocalScale: {x: 0.85, y: 0.67, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50372488791250070
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404976132225910}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &60006406700026702
+--- !u!60 &60878139111313794
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404976132225910}
+  m_GameObject: {fileID: 1308680606986874}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -88,46 +67,58 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.1, y: 0}
-      - {x: 0.1, y: 0.5}
-      - {x: -0.1, y: 0.5}
-      - {x: -0.1, y: 0}
---- !u!114 &114409444350412520
+    - - {x: 0, y: 1}
+      - {x: -0.5, y: -0.5}
+      - {x: 0, y: 0}
+      - {x: 0.5, y: -0.5}
+      - {x: 0, y: 1}
+--- !u!114 &114115537965476634
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404976132225910}
+  m_GameObject: {fileID: 1308680606986874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5605d57ecc23bac4d837fb591c0cc25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114606330165921544
+--- !u!114 &114745745531786926
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404976132225910}
+  m_GameObject: {fileID: 1308680606986874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11248bc8602c4544f9f66d39317242fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ddd87ca791b8734aaaa0ea743b3479b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
-  DyeTime: 5
---- !u!114 &114792411323364184
+  BulletPrefab: {fileID: 1404976132225910, guid: 4c66544f8b4523945b54850c36745e2c,
+    type: 2}
+  BulletCoolDonw: 0.5
+  RotationCoolDonw: 0.7
+  RotationAngle: 0.2
+  MovmentSpeed: 5
+  MinDistanceToLock: 20
+--- !u!114 &114956883354134676
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404976132225910}
+  m_GameObject: {fileID: 1308680606986874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3896451f888386488ebd981892a8224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinePrefab: {fileID: 1487674038685304, guid: d7cd881fa340dbe47bf9f94dbd17ed6c, type: 2}
+  LinePrefab: {fileID: 1487674038685304, guid: 3beed54b4294b134d8b799a2716b471f, type: 2}
   PairsList:
-  - Point1: {x: 0, y: 0.5}
+  - Point1: {x: 0, y: 1}
+    Point2: {x: -0.5, y: -0.5}
+  - Point1: {x: 0, y: 1}
+    Point2: {x: 0.5, y: -0.5}
+  - Point1: {x: -0.5, y: -0.5}
+    Point2: {x: 0, y: 0}
+  - Point1: {x: 0.5, y: -0.5}
     Point2: {x: 0, y: 0}

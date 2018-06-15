@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114141961400921862}
   - component: {fileID: 60613719890634278}
   - component: {fileID: 114611001972219704}
+  - component: {fileID: 114485452541622174}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -92,6 +93,17 @@ MonoBehaviour:
     Point2: {x: 0, y: 0}
   - Point1: {x: 0.5, y: -0.5}
     Point2: {x: 0, y: 0}
+--- !u!114 &114485452541622174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897738335534680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5605d57ecc23bac4d837fb591c0cc25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114611001972219704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
   BulletPrefab: {fileID: 0}
-  BulletInstatiationOffset: {x: 0, y: 1}
-  MovmentSpeed: 20
-  BulletCoolDonw: 0.1
+  MovmentSpeed: 10
+  BulletCoolDonw: 0.3
+  RotationAngle: 3
