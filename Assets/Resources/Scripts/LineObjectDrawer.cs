@@ -7,7 +7,7 @@ public class LineObjectDrawer : MonoBehaviour
     public GameObject LinePrefab;
     public List<Pair> PairsList;
 
-    List<LineHandler> LinesList;
+    public List<LineHandler> LinesList;
 
 	void Start ()
     {

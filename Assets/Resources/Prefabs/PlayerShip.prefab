@@ -23,9 +23,12 @@ GameObject:
   - component: {fileID: 60613719890634278}
   - component: {fileID: 114611001972219704}
   - component: {fileID: 114485452541622174}
+  - component: {fileID: 114645810206408168}
+  - component: {fileID: 50177522440413536}
+  - component: {fileID: 114147826446107448}
   m_Layer: 0
   m_Name: PlayerShip
-  m_TagString: Untagged
+  m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,6 +46,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50177522440413536
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897738335534680}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &60613719890634278
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -64,7 +87,7 @@ PolygonCollider2D:
     adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   m_Points:
     m_Paths:
     - - {x: 0, y: 1}
@@ -93,6 +116,23 @@ MonoBehaviour:
     Point2: {x: 0, y: 0}
   - Point1: {x: 0.5, y: -0.5}
     Point2: {x: 0, y: 0}
+  LinesList: []
+--- !u!114 &114147826446107448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897738335534680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbe6ce8ce8203742ac1512d533ff28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 2
+  StepDeslocation: 3
+  RotateAngle: 5
+  Rotate: 1
+  Activate: 0
 --- !u!114 &114485452541622174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,3 +160,29 @@ MonoBehaviour:
   MovmentSpeed: 10
   BulletCoolDonw: 0.3
   RotationAngle: 3
+  CanMove: 1
+--- !u!114 &114645810206408168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897738335534680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7873d8df1c55cd7459ef0b6fb6d50e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalHP: 100
+  CollisionTags:
+  - EnemyBullet
+  - EnemyShip
+  - PlayerBullet
+  CollisionDamage:
+  - 5
+  - 15
+  - 5
+  Died: 0
+  AllCollision: 0
+  HPBar: {fileID: 0}
+  YouDiedText: {fileID: 0}
+  DeathCounterText: {fileID: 0}

@@ -23,9 +23,11 @@ GameObject:
   - component: {fileID: 60878139111313794}
   - component: {fileID: 114115537965476634}
   - component: {fileID: 114745745531786926}
+  - component: {fileID: 114882757144591498}
+  - component: {fileID: 114488899151436142}
   m_Layer: 0
   m_Name: EnemyShip
-  m_TagString: Untagged
+  m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +85,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5605d57ecc23bac4d837fb591c0cc25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114488899151436142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308680606986874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbe6ce8ce8203742ac1512d533ff28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 2
+  StepDeslocation: 2
+  RotateAngle: 5
+  Rotate: 1
+  Activate: 0
 --- !u!114 &114745745531786926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,7 +118,29 @@ MonoBehaviour:
   RotationCoolDonw: 0.7
   RotationAngle: 0.2
   MovmentSpeed: 5
-  MinDistanceToLock: 20
+  MinDistanceToLock: 10
+  CanMove: 1
+--- !u!114 &114882757144591498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308680606986874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7873d8df1c55cd7459ef0b6fb6d50e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalHP: 5
+  CollisionTags:
+  - PlayerBullet
+  CollisionDamage:
+  - 10
+  Died: 0
+  AllCollision: 0
+  HPBar: {fileID: 0}
+  YouDiedText: {fileID: 0}
+  DeathCounterText: {fileID: 0}
 --- !u!114 &114956883354134676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,3 +162,4 @@ MonoBehaviour:
     Point2: {x: 0, y: 0}
   - Point1: {x: 0.5, y: -0.5}
     Point2: {x: 0, y: 0}
+  LinesList: []

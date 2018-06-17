@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     public Camera MainCamera;
     public GameObject BulletPrefab;
     public float MovmentSpeed = 5, BulletCoolDonw = 0.1f, RotationAngle = 1;
+    public bool CanMove = true;
 
     float LastTimeShootBullet = 0;
 	// Use this for initialization
@@ -25,7 +26,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (Time.time - LastTimeShootBullet > BulletCoolDonw)
         {
-            Instantiate(BulletPrefab, transform.position, transform.rotation);
+            Instantiate(BulletPrefab, transform.position + transform.up * 2, transform.rotation);
             LastTimeShootBullet = Time.time;
         }
     }
@@ -37,25 +38,28 @@ public class PlayerControl : MonoBehaviour
 
     public void CheckInput()
     {
-        if (Input.GetAxis("Horizontal") > 0)
+        if (CanMove)
         {
-            Move(Side.Right);
-        }
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            Move(Side.Left);
-        }
-        if (Input.GetAxis("Vertical") < 0)
-        {
-            Move(Side.Down);
-        }
-        if (Input.GetAxis("Vertical") > 0)
-        {
-            Move(Side.Up);
-        }
-        if (Input.GetAxis("Fire1") > 0)
-        {
-            Shoot();
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                Move(Side.Right);
+            }
+            if (Input.GetAxis("Horizontal") < 0)
+            {
+                Move(Side.Left);
+            }
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                Move(Side.Down);
+            }
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                Move(Side.Up);
+            }
+            if (Input.GetAxis("Fire1") > 0)
+            {
+                Shoot();
+            }
         }
     }
 

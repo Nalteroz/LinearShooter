@@ -6,6 +6,7 @@ public class PeriodicEnemyShoot : MonoBehaviour
 {
     public GameObject BulletPrefab;
     public float BulletCoolDonw = 0.5f, RotationCoolDonw = 0.7f, RotationAngle = 0.2f, MovmentSpeed = 5, MinDistanceToLock = 20;
+    public bool CanMove = true;
 
     GameObject PlayerObject;
     float LastTimeShootBullet = 0, LastTimeChooseDirection = 0;
@@ -18,14 +19,18 @@ public class PeriodicEnemyShoot : MonoBehaviour
 	}
 	void Update ()
     {
-        if((PlayerObject.transform.position - transform.position).magnitude <= MinDistanceToLock) LookAt(PlayerObject.transform.position);
-        else
+        if (CanMove)
         {
-            ChooseRotationDirection();
-            RotateShip(direction);
+            if (PlayerObject && (PlayerObject.transform.position - transform.position).magnitude <= MinDistanceToLock)
+                LookAt(PlayerObject.transform.position);
+            else
+            {
+                ChooseRotationDirection();
+                RotateShip(direction);
+            }
+            MoveFoward();
+            Shoot();
         }
-        MoveFoward();
-        Shoot();
 	}
     void ChooseRotationDirection()
     {
@@ -44,7 +49,7 @@ public class PeriodicEnemyShoot : MonoBehaviour
     {
         if (Time.time - LastTimeShootBullet > BulletCoolDonw)
         {
-            Instantiate(BulletPrefab, transform.position, transform.rotation);
+            Instantiate(BulletPrefab, transform.position + transform.up, transform.rotation);
             LastTimeShootBullet = Time.time;
         }
     }
