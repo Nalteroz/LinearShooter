@@ -33,8 +33,6 @@ public class PlayerControl : MonoBehaviour
 
     public enum Side
     { Left, Right, Up, Down}
-    public enum Rotate
-    { Left, Right }
 
     public void CheckInput()
     {
@@ -56,7 +54,7 @@ public class PlayerControl : MonoBehaviour
             {
                 Move(Side.Up);
             }
-            if (Input.GetAxis("Fire1") > 0)
+            if (Input.GetAxis("Jump") > 0)
             {
                 Shoot();
             }
