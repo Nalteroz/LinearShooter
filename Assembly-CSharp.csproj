@@ -60,14 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Resources\Scripts\DestructionAnimation.cs" />
     <Compile Include="Assets\Resources\Scripts\HPSystem.cs" />
     <Compile Include="Assets\Resources\Scripts\LineHandler.cs" />
     <Compile Include="Assets\Resources\Scripts\LineObjectDrawer.cs" />
     <Compile Include="Assets\Resources\Scripts\Matrix2x2.cs" />
     <Compile Include="Assets\Resources\Scripts\PeriodicEnemyShoot.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Resources\Scripts\RamdomSpawn.cs" />
     <Compile Include="Assets\Resources\Scripts\ScreenBoundariesHandler.cs" />
-    <Compile Include="Assets\Resources\Scripts\Test.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Baiano/Documents/LinearShooter/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
